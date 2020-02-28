@@ -7,11 +7,7 @@
 package Trabajo;
 
 
-public class Principal {
+public class Libro {
+    
 
-    public static void main(String[] args) {
-        int nota=ValidarNumeros.pedirNumValidarNotaAlumno(0, 10);
-        System.out.println(nota);
-
-    }
 }
