@@ -40,7 +40,7 @@ public class ValidarNumeros {
 
         do {
             try {
-                System.out.print("\n\tInserta la nota " + (cont+1) + " del alumno: ");
+                System.out.print("\n\t\tInserta la nota " + (cont+1) + " del alumno: ");
                 nota = pedir.nextInt();
 
                 if (nota < min || nota > max) {
