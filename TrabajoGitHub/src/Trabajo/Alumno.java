@@ -8,5 +8,9 @@ package Trabajo;
 
 
 public class Alumno {
+    String nombre;
+    int edad;
+    int notas;
+    
     
 }
