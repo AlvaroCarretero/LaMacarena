@@ -11,15 +11,13 @@ public class Alumno {
 
     String nombre;
     int edad;
-    int notas;
-    
-    public Alumno() throws Exception {
-        pedirNombre();
-        pedirEdad();
-        pedirNotas();
+    float notas;
+
+    public Alumno() {
+
     }
 
-    void pedirNombre() throws Exception {
+    public void pedirNombre() throws Exception {
         nombre = PedirDatosTeclado.pedirString("\n\tIndique el nombre del alumno: ");
         if (nombre.equalsIgnoreCase("fin")) {
             throw new Exception();
@@ -30,11 +28,22 @@ public class Alumno {
         return nombre;
     }
 
-    void pedirEdad() {
-        edad = PedirDatosTeclado.pedirInt("\n\tIndique la edad del alumno: ");
+    public void pedirEdad() {
+        edad = PedirDatosTeclado.pedirInt("\n\tIndique la edad de " + nombre + ": ");
     }
 
-    void pedirNotas() {
+    public void pedirNotas() {
         notas = ValidarNumeros.pedirNumValidarNotaAlumno(0, 10);
+    }
+
+    public float getNotas() {
+        return notas;
+    }
+    
+    void visDatosAlumno() {
+        System.out.println("\tDatos del alumno con la peor media:");
+        System.out.println("\t\tNOMBRE: "+nombre);
+        System.out.println("\t\tEDAD: "+edad);
+        System.out.println("\t\tMEDIA: "+notas);
     }
 }

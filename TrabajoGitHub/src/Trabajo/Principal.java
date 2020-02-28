@@ -8,14 +8,19 @@ package Trabajo;
 public class Principal {
 
     public static void main(String[] args) throws Exception {
-        
+        int cont = 0,mediaMasBaja;
+        Alumno al = new Alumno();
         try {
             do {
-                Alumno al = new Alumno();
+                cont++;
+                al.pedirNombre();
+                al.pedirEdad();
+                al.pedirNotas();
             } while (true);
         } catch (Exception e) {
             System.out.println("\nSe ha introducido fin. Salimos del programa");
         }
+        al.visDatosAlumno();
 
     }
 }

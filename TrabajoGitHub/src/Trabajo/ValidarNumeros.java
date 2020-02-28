@@ -35,12 +35,12 @@ public class ValidarNumeros {
 
     public static int pedirNumValidarNotaAlumno(int min, int max) {
         int nota = 0, notasAlumnos = 5, mediaMasBaja = Integer.MAX_VALUE;
-        int cont = 0, suma = 0, media;
+        int cont = 0, suma = 0; 
         Scanner pedir = new Scanner(System.in);
 
         do {
             try {
-                System.out.print("\n\t\tInserta la nota " + (cont+1) + " del alumno: ");
+                System.out.print("\n\t\tInserta la nota " + (cont + 1) + ": ");
                 nota = pedir.nextInt();
 
                 if (nota < min || nota > max) {
@@ -59,8 +59,7 @@ public class ValidarNumeros {
             }
         } while (cont < notasAlumnos);
 
-        media = suma / notasAlumnos;
-        return media;
+        return suma;
     }
 
 }
