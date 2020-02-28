@@ -10,14 +10,14 @@ import java.util.Scanner;
 
 public class ValidarNumeros {
 
-    public static int pedirNumValidarEmpleado(int min, int max) {
+    public static int pedirNumValidarEmpleado(int min, int max, String menVis) {
         int num = 0;
         boolean bien = false;
         Scanner pedir = new Scanner(System.in);
 
         do {
             try {
-                System.out.print("\n\tInserta la edad del empleado: ");
+                System.out.print(menVis);
                 num = pedir.nextInt();
                 if (num < min || num > max) {
                     System.out.println("\t\tDato invalido. Numero fuera del rango");
