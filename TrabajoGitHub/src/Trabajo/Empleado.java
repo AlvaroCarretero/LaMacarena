@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Trabajo;
 
+import java.util.InputMismatchException;
 
 public class Empleado {
+
     String nombre;
     int edad;
     float sueldo;
 
     public Empleado() {
-        pedirNombre();
-        pedirEdad();
-        pedirSueldo();
+        pedirDatosEmpleado();
     }
 
     public String getNombre() {
@@ -41,17 +40,33 @@ public class Empleado {
     public void setSueldo(float sueldo) {
         this.sueldo = sueldo;
     }
-    
-    void pedirNombre()
-    {
-        nombre=pedirDatos.PedirDatosTeclado.pedirString("\n\tInserte el nombre del empleado: ");
+
+    void pedirNombre() {
+        nombre = pedirDatos.PedirDatosTeclado.pedirString("\n\tInserte el nombre del empleado: ");
     }
-    void pedirEdad()
-    {
-        edad=ValidarNumeros.pedirNumValidarEmpleado(18, 65,"\n\tIndique la edad de "+nombre+": ");
+
+    void pedirEdad() throws Exception {
+        try {
+            edad = ValidarNumeros.pedirNumValidarEmpleado(18, 65, "\n\tIndique la edad de " + nombre + ": ");
+        } catch (InputMismatchException e) {
+            throw new Exception();
+        }
     }
-    void pedirSueldo()
-    {
-        sueldo=pedirDatos.PedirDatosTeclado.pedirFloatValLetras("\n\tIndique el sueldo de "+nombre+": ");
+
+    void pedirSueldo() {
+        sueldo = pedirDatos.PedirDatosTeclado.pedirFloatValLetras("\n\tIndique el sueldo de " + nombre + ": ");
+    }
+
+    void pedirDatosEmpleado() {
+        try {
+            while (true) {
+                pedirNombre();
+                pedirEdad();
+                pedirSueldo();
+            }
+        } catch (Exception e) {
+            System.out.println("\t\tLo siento. Se han insertado letras");
+            System.out.println("\t\tDejamos de pedir datos de empleados");
+        }
     }
 }

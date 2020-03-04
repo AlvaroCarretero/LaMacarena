@@ -5,22 +5,33 @@
  */
 package Trabajo;
 
+import pedirDatos.PedirDatosTeclado;
+
 public class Principal {
 
-    public static void main(String[] args) throws Exception {
-        int cont = 0,mediaMasBaja;
-        Alumno al = new Alumno();
-        try {
-            do {
-                cont++;
-                al.pedirNombre();
-                al.pedirEdad();
-                al.pedirNotas();
-            } while (true);
-        } catch (Exception e) {
-            System.out.println("\nSe ha introducido fin. Salimos del programa");
-        }
-        al.visDatosAlumno();
+    public static void main(String[] args) {
+        boolean terminao = false;
+        int opcion;
+        int cont = 0;
 
+        do {
+            opcion = PedirDatosTeclado.pedirIntValidInsLetras("\nInserte una opcion: ");
+            switch (opcion) {
+                case 1:
+                    Empleado emp = new Empleado();
+                    break;
+                case 2:
+                    Alumno al = new Alumno();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    System.out.println("\n\t\tSalimos del programa.");
+                    System.out.println("\t\tMuchas gracias por venir");
+                    System.out.println("\t\tDeje su like y suscribase");
+                    terminao = true;
+                    break;
+            }
+        } while (!terminao);
     }
 }

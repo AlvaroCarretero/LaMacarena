@@ -16,50 +16,16 @@ public class ValidarNumeros {
         Scanner pedir = new Scanner(System.in);
 
         do {
-            try {
-                System.out.print(menVis);
-                num = pedir.nextInt();
-                if (num < min || num > max) {
-                    System.out.println("\t\tDato invalido. Numero fuera del rango");
-                } else {
-                    bien = true;
-                }
-            } catch (InputMismatchException e) {
-                pedir.nextLine();
-                System.out.println("\t\tLo sineto, ha insertado letras.");
+            System.out.print(menVis);
+            num = pedir.nextInt();
+            if (num < min || num > max) {
+                System.out.println("\t\tDato invalido. Numero fuera del rango");
+            } else {
+                bien = true;
             }
         } while (bien == false);
 
         return num;
-    }
-
-    public static int pedirNumValidarNotaAlumno(int min, int max) {
-        int nota = 0, notasAlumnos = 5, mediaMasBaja = Integer.MAX_VALUE;
-        int cont = 0, suma = 0; 
-        Scanner pedir = new Scanner(System.in);
-
-        do {
-            try {
-                System.out.print("\n\t\tInserta la nota " + (cont + 1) + ": ");
-                nota = pedir.nextInt();
-
-                if (nota < min || nota > max) {
-                    cont = 0;
-                    suma = 0;
-                    System.out.println("\t\tDato invalido. Numero fuera del rango");
-                } else {
-                    cont++;
-                    suma = suma + nota;
-                }
-            } catch (InputMismatchException e) {
-                pedir.nextLine();
-                cont = 0;
-                suma = 0;
-                System.out.println("\t\tLo sineto, ha insertado letras.");
-            }
-        } while (cont < notasAlumnos);
-
-        return suma;
     }
 
 }
