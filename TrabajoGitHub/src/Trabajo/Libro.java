@@ -51,10 +51,30 @@ public class Libro {
         pedirNumPag();
     }
     void pedirLibros(){
-        while(true){
         pedirTitulo();
-        cantLibros++;
-        }
     }
+    public int pedirNumValidarLibro() {
+        int libro = 0;
+        int cont = 0,cant=0;
+        Scanner pedir = new Scanner(System.in);
 
+        do {
+            try {
+                System.out.print("\n\t\tInserta el libro " + (cont + 1) +": ");
+                libro = pedir.nextInt();
+
+                if (libro<0) {
+                    cont = 0;
+                    cant=0;
+                    System.out.println("\t\tDato invalido. Numero negativo");
+                } else {
+                    cont++; 
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("\t\tLo sineto, ha insertado letras.");
+            }
+        } while (libro<0);
+        cant=cant+cont;
+        return cant;
+    }
 }
