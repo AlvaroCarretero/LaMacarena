@@ -13,7 +13,7 @@ public class Principal {
         boolean terminao = false;
         int opcion;
         int cont = 0;
-        
+
         System.out.println("\n\tMENÚ");
         System.out.println("1. Gestión de empleados");
         System.out.println("2. Gestión de alumnos");
@@ -30,10 +30,7 @@ public class Principal {
                     Alumno al = new Alumno();
                     break;
                 case 3:
-                    Libro libro;
-                    do {            
-                    libro=new Libro();
-                    } while (libro.getNumPag()>=0);
+                    Libro libro = new Libro();
                     break;
                 case 4:
                     System.out.println("\n\t\tSalimos del programa.");

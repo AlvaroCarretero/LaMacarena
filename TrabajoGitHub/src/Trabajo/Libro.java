@@ -47,8 +47,12 @@ public class Libro {
         autor = pedirDatos.PedirDatosTeclado.pedirString("\tIndique el nombre del autor: ");
     }
 
-    void pedirNumPag() {
-        numPag = pedirDatos.PedirDatosTeclado.pedirIntValidInsLetras("\tIndique el número de páginas: ");
+    void pedirNumPag() throws Exception {
+        try {
+            numPag = pedirDatos.PedirDatosTeclado.pedirInt("\tIndique el número de páginas: ");
+        } catch (InputMismatchException e) {
+            throw new Exception();
+        }
     }
 
     void pedirTitulo() {
@@ -56,8 +60,17 @@ public class Libro {
     }
 
     void pedirLibros() {
-        pedirAutor();
-        pedirTitulo();
-        pedirNumPag();
+        try {
+            do {
+                pedirAutor();
+                pedirTitulo();
+                pedirNumPag();
+            } while (numPag > 0);
+            System.out.println("\t\tLo siento. El número que ha insertado es negativo");
+            System.out.println("\t\tDejamos de pedir datos de los libros");
+        } catch (Exception e) {
+            System.out.println("\t\tLo siento. Se han insertado letras");
+            System.out.println("\t\tDejamos de pedir datos de libros");
+        }
     }
 }
