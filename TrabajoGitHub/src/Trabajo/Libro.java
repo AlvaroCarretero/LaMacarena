@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Trabajo;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
 public class Libro {
-    boolean tituLi=false;
+
+    boolean tituLi = false;
     int numPag;
-    String titulo,autor;
-    int cantLibros=0;
+    String titulo, autor;
+    int cantLibros = 0;
 
     public Libro() {
         pedirLibros();
@@ -43,17 +42,20 @@ public class Libro {
     public void setAutor(String autor) {
         this.autor = autor;
     }
-    
-    void pedirAutor(){
-        autor=pedirDatos.PedirDatosTeclado.pedirString("\tIndique el nombre del autor: ");
+
+    void pedirAutor() {
+        autor = pedirDatos.PedirDatosTeclado.pedirString("\tIndique el nombre del autor: ");
     }
-    void pedirNumPag(){
-        numPag=pedirDatos.PedirDatosTeclado.pedirIntValidInsLetras("\tIndique el número de páginas: ");
+
+    void pedirNumPag() {
+        numPag = pedirDatos.PedirDatosTeclado.pedirIntValidInsLetras("\tIndique el número de páginas: ");
     }
-    void pedirTitulo(){
-        titulo=pedirDatos.PedirDatosTeclado.pedirString("\tInserte el titulo del libro: ");
+
+    void pedirTitulo() {
+        titulo = pedirDatos.PedirDatosTeclado.pedirString("\tInserte el titulo del libro: ");
     }
-    void pedirLibros(){
+
+    void pedirLibros() {
         pedirAutor();
         pedirTitulo();
         pedirNumPag();

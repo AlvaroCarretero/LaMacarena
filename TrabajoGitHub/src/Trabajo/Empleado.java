@@ -60,17 +60,18 @@ public class Empleado {
 
     void pedirDatosEmpleado() {
         try {
-            while (true) {
+            do {
                 pedirNombre();
                 pedirEdad();
                 pedirSueldo();
-            }
+            } while (true);
+
         } catch (Exception e) {
             System.out.println("\t\tLo siento. Se han insertado letras");
             System.out.println("\t\tDejamos de pedir datos de empleados");
         }
     }
-    
+
     public static int pedirNumValidarEmpleado(int min, int max, String menVis) {
         int num = 0;
         boolean bien = false;
