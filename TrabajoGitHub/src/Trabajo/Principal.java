@@ -24,6 +24,10 @@ public class Principal {
                     Alumno al = new Alumno();
                     break;
                 case 3:
+                    Libro libro;
+                    do {            
+                    libro=new Libro();
+                    } while (libro.getNumPag()>=0);
                     break;
                 case 4:
                     System.out.println("\n\t\tSalimos del programa.");
