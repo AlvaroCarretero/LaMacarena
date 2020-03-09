@@ -6,6 +6,7 @@
 package Trabajo;
 
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Empleado {
 
@@ -47,7 +48,7 @@ public class Empleado {
 
     void pedirEdad() throws Exception {
         try {
-            edad = ValidarNumeros.pedirNumValidarEmpleado(18, 65, "\n\tIndique la edad de " + nombre + ": ");
+            edad = pedirNumValidarEmpleado(18, 65, "\n\tIndique la edad de " + nombre + ": ");
         } catch (InputMismatchException e) {
             throw new Exception();
         }
@@ -68,5 +69,23 @@ public class Empleado {
             System.out.println("\t\tLo siento. Se han insertado letras");
             System.out.println("\t\tDejamos de pedir datos de empleados");
         }
+    }
+    
+    public static int pedirNumValidarEmpleado(int min, int max, String menVis) {
+        int num = 0;
+        boolean bien = false;
+        Scanner pedir = new Scanner(System.in);
+
+        do {
+            System.out.print(menVis);
+            num = pedir.nextInt();
+            if (num < min || num > max) {
+                System.out.println("\t\tDato invalido. Numero fuera del rango");
+            } else {
+                bien = true;
+            }
+        } while (bien == false);
+
+        return num;
     }
 }
