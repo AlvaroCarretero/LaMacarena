@@ -17,6 +17,7 @@ public class Libro {
 
     public Libro() {
         pedirLibros();
+        visLibros();
     }
 
     public int getNumPag() {
@@ -72,5 +73,10 @@ public class Libro {
             System.out.println("\t\tLo siento. Se han insertado letras");
             System.out.println("\t\tDejamos de pedir datos de libros");
         }
+    }
+    void visLibros(){
+        System.out.println("\n\tAUTOR: "+autor);
+        System.out.println("\n\tNUMERO DE PÁGINAS: "+numPag);
+        System.out.println("\n\tTITULO: "+titulo);
     }
 }
