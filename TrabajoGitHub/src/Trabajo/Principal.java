@@ -13,6 +13,12 @@ public class Principal {
         boolean terminao = false;
         int opcion;
         int cont = 0;
+        
+        System.out.println("\n\tMENÚ");
+        System.out.println("1. Gestión de empleados");
+        System.out.println("2. Gestión de alumnos");
+        System.out.println("3. Gestión de libros");
+        System.out.println("4. Salir");
 
         do {
             opcion = PedirDatosTeclado.pedirIntValidInsLetras("\nInserte una opcion: ");
@@ -31,8 +37,7 @@ public class Principal {
                     break;
                 case 4:
                     System.out.println("\n\t\tSalimos del programa.");
-                    System.out.println("\t\tMuchas gracias por venir");
-                    System.out.println("\t\tDeje su like y suscribase");
+                    System.out.println("\t\tNos vemos");
                     terminao = true;
                     break;
             }
