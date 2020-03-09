@@ -45,19 +45,19 @@ public class Libro {
     }
 
     void pedirAutor() {
-        autor = pedirDatos.PedirDatosTeclado.pedirString("\tIndique el nombre del autor: ");
+        autor = pedirDatos.PedirDatosTeclado.pedirString("\n\tIndique el nombre del autor: ");
     }
 
     void pedirNumPag() throws Exception {
         try {
-            numPag = pedirDatos.PedirDatosTeclado.pedirInt("\tIndique el número de páginas: ");
+            numPag = pedirDatos.PedirDatosTeclado.pedirInt("\n\tIndique el número de páginas: ");
         } catch (InputMismatchException e) {
             throw new Exception();
         }
     }
 
     void pedirTitulo() {
-        titulo = pedirDatos.PedirDatosTeclado.pedirString("\tInserte el titulo del libro: ");
+        titulo = pedirDatos.PedirDatosTeclado.pedirString("\n\tInserte el titulo del libro: ");
     }
 
     void pedirLibros() {
